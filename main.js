@@ -95,6 +95,8 @@ function clicked(row, col) {
     }
     round++;
 
+    if (cells[row][col].marked) return;
+
     cells[row][col].revealed = true;
     drawCell(row, col);
     if (cells[row][col].bomb) {
