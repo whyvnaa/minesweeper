@@ -95,14 +95,16 @@ function clicked(row, col) {
     }
     round++;
 
-    if (cells[row][col].marked) return;
+    const cell = cells[row][col];
 
-    cells[row][col].revealed = true;
+    if (cell.marked) return;
+
+    cell.revealed = true;
     drawCell(row, col);
-    if (cells[row][col].bomb) {
+    if (cell.bomb) {
         showAll();
     }
-    if (cells[row][col].count == 0) {
+    if (cell.count == 0) {
         drawObvious(row, col);
     }
 }
